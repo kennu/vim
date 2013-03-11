@@ -1,4 +1,5 @@
 syntax on
+set encoding=utf-8
 nnoremap <Space> @q
 set ruler
 set nocompatible
