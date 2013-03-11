@@ -38,3 +38,8 @@ au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 " Disable HTML syntax checking because it doesn't work for templates
 let g:syntastic_html_checkers=[]
+" Override all paths
+set viminfo+=n~/.vim/.viminfo
+set directory=~/.vim/swap//
+set backupdir=~/.vim/backup//
+set undodir=~/.vim/undo//
