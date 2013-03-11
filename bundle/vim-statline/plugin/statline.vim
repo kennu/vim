@@ -36,11 +36,10 @@ hi default link User3 Error
 hi default link User4 Special
 
 
-hi User1 ctermbg=darkblue ctermfg=231
-hi User2 ctermbg=darkblue ctermfg=226
-hi User3 ctermbg=red ctermfg=white
-hi User4 ctermbg=red ctermfg=white
-hi StatusLine ctermbg=blue ctermfg=white
+hi User1 ctermbg=18 ctermfg=231
+hi User2 ctermbg=18 ctermfg=226
+hi User3 ctermbg=124 ctermfg=white
+hi User4 ctermbg=124 ctermfg=white
 
 " ====== basic info ======
 
