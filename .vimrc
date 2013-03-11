@@ -16,7 +16,7 @@ map <C-c> :n<CR>
 " Press CR to get rid of current search highlight
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " 4-space indent
-autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl set sts=4 et shiftwidth=4
+autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl\|*.vim set sts=4 et shiftwidth=4
 " 2-space indent
 autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.jade\|*.json\|*.yml\|*.yaml set sts=2 et shiftwidth=2
 " Other

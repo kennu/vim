@@ -179,7 +179,7 @@ if !exists('g:statline_syntastic')
     let g:statline_syntastic = 1
 endif
 if g:statline_syntastic
-    set statusline+=%3*\ %3*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+    set statusline+=%3*%3*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
 endif
 
 
