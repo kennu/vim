@@ -36,3 +36,5 @@ let g:statline_fugitive = 1
 " Save and restore cursor position
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+" Disable HTML syntax checking because it doesn't work for templates
+let g:syntastic_html_checkers=[]
