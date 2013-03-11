@@ -24,3 +24,5 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+execute pathogen#infect()
+filetype plugin indent on
