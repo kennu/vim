@@ -26,20 +26,25 @@ set laststatus=2
 " easier to customize, reseting the User[n] highlight will remove the link.
 " Another benefit is that colors will adapt to colorscheme.
 
-"filename
-hi default link User1 Identifier
-" flags
-hi default link User2 Statement
-" errors
-hi default link User3 Error
-" fugitive
-hi default link User4 Special
+""filename
+""hi default link User1 Identifier
+"" flags
+"hi default link User2 Statement
+"" errors
+"hi default link User3 Error
+"" fugitive
+"hi default link User4 Special
 
-
+" Filename
 hi User1 ctermbg=18 ctermfg=231
+" General
 hi User2 ctermbg=18 ctermfg=226
+" Errors
 hi User3 ctermbg=124 ctermfg=white
-hi User4 ctermbg=124 ctermfg=white
+" Fugitive
+hi User4 ctermbg=18 ctermfg=51
+" Charcode
+hi User5 ctermbg=18 ctermfg=152
 
 " ====== basic info ======
 
@@ -71,9 +76,18 @@ endif
 " ---- filename (relative or tail) ----
 
 if exists('g:statline_filename_relative')
-    set statusline+=%1*%f%*
+    set statusline+=%1*%f\ %*
 else
-    set statusline+=%1*%t%*
+    set statusline+=%1*%t\ %*
+endif
+
+" ---- Fugitive ----
+
+if !exists('g:statline_fugitive')
+    let g:statline_fugitive = 0
+endif
+if g:statline_fugitive
+    set statusline+=%4*%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
 endif
 
 
@@ -130,7 +144,7 @@ if !exists('g:statline_show_charcode')
 endif
 if g:statline_show_charcode
     " (b:num, B:hex)
-    set statusline+=%2*%5(\ 0x\%B%)%*
+    set statusline+=%5*%5(\ 0x\%B%)\ %*
 endif
 
 
@@ -158,15 +172,6 @@ if g:statline_rbenv
 endif
 
 
-" ---- Fugitive ----
-
-if !exists('g:statline_fugitive')
-    let g:statline_fugitive = 0
-endif
-if g:statline_fugitive
-    set statusline+=%4*%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*
-endif
-
 
 " ---- Syntastic errors ----
 
@@ -174,7 +179,7 @@ if !exists('g:statline_syntastic')
     let g:statline_syntastic = 1
 endif
 if g:statline_syntastic
-    set statusline+=%2*\ %3*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+    set statusline+=%3*\ %3*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
 endif
 
 

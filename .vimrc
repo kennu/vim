@@ -6,19 +6,21 @@ nnoremap <Space> @q
 set ruler
 set nocompatible
 set laststatus=2
-highlight Comment ctermfg=cyan
+hi Comment ctermfg=cyan
+hi Search ctermbg=197 guibg=197
 set modeline
-" Key bindings
+" C-x to goto previous buffer
 map <C-x> :N<CR>
+" C-c to goto next buffer
 map <C-c> :n<CR>
-map <C-p> :tabp<CR>
-map <C-n> :tabn<CR>
+" Press CR to get rid of current search highlight
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " 4-space indent
 autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl set sts=4 et shiftwidth=4
 " 2-space indent
 autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.jade\|*.json\|*.yml\|*.yaml set sts=2 et shiftwidth=2
 " Other
-autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et shiftwidth=2
+autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et sftwidth=2
 nmap  \l :setlocal number!<CR>
 " Move by wrapped line
 nmap j gj
@@ -30,6 +32,7 @@ set smartcase
 set hlsearch
 " Show charcode in statusline
 let g:statline_show_charcode = 1
+let g:statline_fugitive = 1
 " Save and restore cursor position
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
