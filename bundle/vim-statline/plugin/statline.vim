@@ -245,7 +245,7 @@ endif
 
 function! StatlineTrailingSpaceWarning()
     if !exists("b:statline_trailing_space_warning")
-        if search('\s\+$', 'nw') != 0
+        if search('[^ ]\s\+$', 'nw') != 0
             let b:statline_trailing_space_warning = '[\s]'
         else
             let b:statline_trailing_space_warning = ''
