@@ -9,7 +9,7 @@ else
 endif
 
 if has('autocmd')
-  filetype plugin indent on
+"  filetype plugin indent on
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
