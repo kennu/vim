@@ -220,7 +220,7 @@ function! StatlineTabWarning()
         if tabs && spaces
             let b:statline_indent_warning = g:statline_mixed_indent_string
         elseif (spaces && !&et) || (tabs && &et)
-            let b:statline_indent_warning = '[&et]'
+            let b:statline_indent_warning = '[mixed tab/space]'
         endif
     endif
     return b:statline_indent_warning
@@ -246,7 +246,7 @@ endif
 function! StatlineTrailingSpaceWarning()
     if !exists("b:statline_trailing_space_warning")
         if search('[^ ]\s\+$', 'nw') != 0
-            let b:statline_trailing_space_warning = '[\s]'
+            let b:statline_trailing_space_warning = '[whitespace at eol]'
         else
             let b:statline_trailing_space_warning = ''
         endif
