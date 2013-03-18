@@ -43,3 +43,5 @@ set viminfo+=n~/.vim/.viminfo
 set directory=~/.vim/swap//
 set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
+" Disable some coffeelint warnings
+let g:syntastic_coffee_coffeelint_args="--csv -f /Users/kennu/.vim/coffeelint.json"
