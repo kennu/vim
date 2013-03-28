@@ -20,7 +20,7 @@ autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.
 " 2-space indent
 autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.jade\|*.json\|*.yml\|*.yaml set sts=2 et shiftwidth=2
 " Other
-autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et sftwidth=2
+autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et shiftwidth=2
 nmap  \l :setlocal number!<CR>
 " Move by wrapped line
 nmap j gj
