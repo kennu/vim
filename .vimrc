@@ -18,7 +18,7 @@ nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " 4-space indent
 autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl\|*.vim\|*.hbs set sts=4 et shiftwidth=4
 " 2-space indent
-autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.jade\|*.json\|*.yml\|*.yaml set sts=2 et shiftwidth=2
+autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.ejs\|*.jade\|*.json\|*.yml\|*.yaml\|*.m set sts=2 et shiftwidth=2
 " Other
 autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et shiftwidth=2
 nmap  \l :setlocal number!<CR>
