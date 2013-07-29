@@ -1,5 +1,5 @@
-syntax on
 execute pathogen#infect()
+syntax on
 " General settings
 set encoding=utf-8
 nnoremap <Space> @q
