@@ -45,3 +45,5 @@ set backupdir=~/.vim/backup//
 set undodir=~/.vim/undo//
 " Disable some coffeelint warnings
 let g:syntastic_coffee_coffeelint_args="--csv -f /Users/kennu/.vim/coffeelint.json"
+" Linkify command
+command! Linkify :s/\(.*\)/<a target="_blank" href="\1">\1<\/a>/|:nohlsearch|:normal <CR>
