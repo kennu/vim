@@ -16,7 +16,7 @@ map <C-c> :n<CR>
 " Press CR to get rid of current search highlight
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " 4-space indent
-autocmd BufEnter *.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl\|*.vim\|*.hbs set sts=4 et shiftwidth=4
+autocmd BufEnter *.c\|*.cc\|*.cxx\|*.py\|*.html\|*.hamlet\|*.js\|*.css\|*.scala\|*.java\|*.php\|*.hs\|*.styl\|*.vim\|*.hbs set sts=4 et shiftwidth=4
 " 2-space indent
 autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.coffee\|*.ejs\|*.jade\|*.json\|*.yml\|*.yaml\|*.m set sts=2 et shiftwidth=2
 " Other
@@ -47,3 +47,12 @@ set undodir=~/.vim/undo//
 let g:syntastic_coffee_coffeelint_args="--csv -f /Users/kennu/.vim/coffeelint.json"
 " Linkify command
 command! Linkify :s/\(.*\)/<a target="_blank" href="\1">\1<\/a>/|:nohlsearch|:normal <CR>
+" Disable Alt-Space on OS X (non-breaking space)
+map <Char-0xa0> <Space>
+nmap <Char-0xa0> <Space>
+vmap <Char-0xa0> <Space>
+xmap <Char-0xa0> <Space>
+smap <Char-0xa0> <Space>
+omap <Char-0xa0> <Space>
+imap <Char-0xa0> <Space>
+cmap <Char-0xa0> <Space>
