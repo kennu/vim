@@ -7,7 +7,7 @@ set ruler
 set nocompatible
 set laststatus=2
 hi Comment ctermfg=cyan
-hi Search ctermbg=197 guibg=197
+"hi Search ctermbg=197 guibg=197
 set modeline
 " C-x to goto previous buffer
 map <C-x> :N<CR>
@@ -21,6 +21,7 @@ autocmd BufEnter *.c\|*.cc\|*.cxx\|*.py\|*.html\|*.hamlet\|*.js\|*.ejs\|*.css\|*
 autocmd BufEnter *.kl\|*.rb\|*.erb\|*.rake\|*.scss\|*.less\|*.coffee\|*.jade\|*.json\|*.yml\|*.yaml\|*.m set sts=2 et shiftwidth=2
 " Other
 autocmd BufEnter *.phtml\|*.module\|*.install set filetype=php sts=2 et shiftwidth=2
+autocmd BufRead,BufWrite **/*private*/** set noundofile nobackup
 nmap  \l :setlocal number!<CR>
 " Move by wrapped line
 nmap j gj
@@ -34,8 +35,8 @@ set hlsearch
 let g:statline_show_charcode = 1
 let g:statline_fugitive = 1
 " Save and restore cursor position
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+au BufWinLeave * if expand('%:p') !~ "private" | silent! mkview | endif
+au BufWinEnter * if expand('%:p') !~ "private" | silent! loadview | endif
 " Disable HTML syntax checking because it doesn't work for templates
 let g:syntastic_html_checkers=[]
 " Override all paths
